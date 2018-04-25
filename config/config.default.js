@@ -10,14 +10,14 @@ module.exports = appInfo => {
   config.middleware = [];
 
   config.weapp = {
-  	APPID: 'wx4bb18bae392d2474',
-  	SECRET: 'c7af085ca42c15f950528ab3e78ae843'
+    APPID: 'wx4bb18bae392d2474',
+    SECRET: 'c7af085ca42c15f950528ab3e78ae843',
   };
 
   config.security = {
     csrf: {
       enable: false,
-    }
+    },
   };
 
   config.cors = {
@@ -25,5 +25,9 @@ module.exports = appInfo => {
     credentials: true,
   };
 
+
+  exports.mongoose = {
+    url: 'mongodb://@localhost:27017/PROJECT',
+  };
   return config;
 };

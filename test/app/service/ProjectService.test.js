@@ -20,7 +20,7 @@ describe('test/app/service/ProjectService.test.js', () => {
 
   it('should get', async function() {
     const ctx = app.mockContext();
-    const result = await ctx.service.projectService.get('5ad6f52d1955d81f946bdd11');
+    const result = await ctx.service.projectService.get('5ae02437a73b632bbdcbd5de');
     console.log(result);
     return result;
   });
