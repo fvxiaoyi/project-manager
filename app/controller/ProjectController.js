@@ -25,7 +25,7 @@ class ProjectController extends Controller {
 
   async addTask() {
     const params = this.ctx.request.body;
-    this.ctx.body = await this.ctx.service.projectService.create(params);
+    this.ctx.body = await this.ctx.service.taskService.create(params);
   }
 }
 
