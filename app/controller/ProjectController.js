@@ -13,8 +13,7 @@ class ProjectController extends Controller {
   }
 
   async get() {
-  	const params = this.ctx.request.body;
-    this.ctx.body = await this.ctx.service.projectService.get(params.id);
+    this.ctx.body = await this.ctx.service.projectService.get(this.ctx.params.id);
   }
 
   async create() {
