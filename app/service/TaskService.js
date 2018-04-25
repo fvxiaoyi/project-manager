@@ -11,7 +11,6 @@ class TaskService extends Service {
   }
 
   async create(param) {
-    console.log(`=========>${param.project}`)
     assert(param.name, '名称不能为空');
     assert(param.project, '所属人不能为空');
     const task = new this.ctx.model.Task(param);
