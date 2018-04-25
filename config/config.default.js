@@ -14,8 +14,15 @@ module.exports = appInfo => {
   	SECRET: 'c7af085ca42c15f950528ab3e78ae843'
   };
 
-  config.mongoose = {
-    url: 'mongodb://@localhost:27017/PROJECT',
+  config.security = {
+    csrf: {
+      enable: false,
+    }
+  };
+
+  config.cors = {
+    allowMethods: 'GET,PUT,POST,PATCH,DELETE,HEAD,OPTIONS',
+    credentials: true,
   };
 
   return config;
