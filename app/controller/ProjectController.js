@@ -14,8 +14,6 @@ class ProjectController extends Controller {
 
   async get() {
     let result = await this.ctx.service.projectService.get(this.ctx.params.id);
-    console.log(result)
-    console.log(this.ctx.params.id)
     this.ctx.body = result;
   }
 

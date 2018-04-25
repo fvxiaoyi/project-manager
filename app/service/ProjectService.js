@@ -13,10 +13,14 @@ class ProjectService extends Service {
   async get(_id) {
     assert(_id, '必须传入id');
     let find = await this.ctx.model.Project.findOne({ _id }).exec();
+    console.log(find)
     if (find) {
       find = find.toObject();
+      console.log(find)
       const tasks = await this.ctx.service.taskService.query(find._id);
+      console.log(tasks)
       find.tasks = tasks;
+      console.log(find)
       return find;
     }
     return null;
