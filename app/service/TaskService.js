@@ -14,10 +14,10 @@ class TaskService extends Service {
     assert(param.name, '名称不能为空');
     assert(param.project, '所属人不能为空');
     assert(param.remindTime, '提醒时间不能为空');
-    if(param.remindType === 0){
+    if(param.remindType == 0){
       assert(param.remindDate, '提醒日期不能为空');
       delete param.remindWeek
-    } else if(param.remindType === 1){
+    } else if(param.remindType == 1){
       delete param.remindDate
       delete param.remindWeek
     } else {
