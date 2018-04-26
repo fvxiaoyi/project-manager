@@ -15,5 +15,6 @@ module.exports = app => {
   router.post('/project/query', responseBody, controller.projectController.query);
   router.post('/project/addTask', responseBody, controller.projectController.addTask);
   router.post('/project/completeTask/:id', responseBody, controller.projectController.completeTask);
+  router.post('/project/unCompleteTask/:id', responseBody, controller.projectController.unCompleteTask);
   router.post('/project/deleteTask/:id', responseBody, controller.projectController.deleteTask);
 };

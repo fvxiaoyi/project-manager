@@ -42,6 +42,14 @@ class TaskService extends Service {
     return { _id };
   }
 
+  async unCompleteTask(_id) {
+    assert(_id, 'id 不能为空');
+    await this.ctx.model.Task.findOneAndUpdate({ _id }, {
+      status: 0
+    });
+    return { _id };
+  }
+  
   async delete(_id){
     assert(_id, 'id 不能为空');
     await this.ctx.model.Task.remove({ _id }, err => {

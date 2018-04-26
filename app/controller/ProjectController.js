@@ -7,7 +7,7 @@ class ProjectController extends Controller {
     const params = this.ctx.request.body;
     const result = {};
     let data = [];
-    data = await this.ctx.service.projectService.query(params.ownerId);
+    data = await this.ctx.service.projectService.query(params.ownerId, params.archive);
     result.data = data;
     result.total = data.length;
     this.ctx.body = result;
@@ -38,6 +38,10 @@ class ProjectController extends Controller {
 
   async completeTask() {
     this.ctx.body = await this.ctx.service.taskService.complete(this.ctx.params.id);
+  }
+
+  async unCompleteTask() {
+    this.ctx.body = await this.ctx.service.taskService.unCompleteTask(this.ctx.params.id);
   }
 
   async deleteTask() {

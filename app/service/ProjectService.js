@@ -4,8 +4,8 @@ const Service = require('egg').Service,
   assert = require('assert');
 
 class ProjectService extends Service {
-  async query(ownerId) {
-    return await this.ctx.model.Project.find({ ownerId })
+  async query(ownerId, archive) {
+    return await this.ctx.model.Project.find({ ownerId, archive })
       .sort({ createTime: -1 })
       .exec();
   }
