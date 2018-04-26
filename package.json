@@ -26,6 +26,7 @@
   },
   "scripts": {
     "start": "egg-scripts start --title=egg-server-project-manager",
+    "start1": "egg-scripts start --daemon --title=egg-server-project-manager",
     "stop": "egg-scripts stop --title=egg-server-project-manager",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",

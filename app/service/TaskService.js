@@ -13,7 +13,6 @@ class TaskService extends Service {
   async create(param) {
     assert(param.name, '名称不能为空');
     assert(param.project, '所属人不能为空');
-    assert(param.remindWeek || param.remindDate, '提醒日期不能为空');
     assert(param.remindTime, '提醒时间不能为空');
     if(param.remindType === 1){
       assert(param.remindDate, '提醒日期不能为空');
@@ -49,7 +48,7 @@ class TaskService extends Service {
     });
     return { _id };
   }
-  
+
   async delete(_id){
     assert(_id, 'id 不能为空');
     await this.ctx.model.Task.remove({ _id }, err => {
