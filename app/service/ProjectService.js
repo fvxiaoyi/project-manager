@@ -34,6 +34,23 @@ class ProjectService extends Service {
     });
     return { _id: project._id };
   }
+
+  async archive(_id) {
+    assert(_id, 'id 不能为空');
+    await this.ctx.model.Task.findOneAndUpdate({ _id }, {
+      archive: 1
+    });
+    return { _id };
+  }
+
+  async unArchive(_id) {
+    assert(_id, 'id 不能为空');
+    await this.ctx.model.Task.findOneAndUpdate({ _id }, {
+      archive: 0
+    });
+    return { _id };
+  }
+
 }
 
 module.exports = ProjectService;

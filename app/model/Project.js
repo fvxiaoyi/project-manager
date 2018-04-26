@@ -7,6 +7,7 @@ module.exports = app => {
   const ProjectSchema = new Schema({
     name: String,
     ownerId: String,
+    archive: { type: Number, default: 0, min: 0, max: 1 },
     createTime: { type: Date, default: Date.now },
   });
 

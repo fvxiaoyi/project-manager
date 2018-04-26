@@ -2,7 +2,7 @@
 
 /*
 	priority: [0: '普通', 1: '紧急', 2: '非常紧急'],
-	remindType: [0：'一次', 1：每日', 2：'每周', 3：'每月'],
+	remindType: [0：'一次', 1：每日', 2：'每周'],
   status : 0未完成，1已完成
 */
 
@@ -18,6 +18,7 @@ module.exports = app => {
     },
     priority: { type: Number, default: 0, min: 0, max: 2 },
     remindType: { type: Number, default: 0, min: 0, max: 3 },
+    remindWeek: { type: Number, min: 1, max: 7 },
     remindDate: String,
     remindTime: String,
     dueDate: String,
